@@ -15,7 +15,7 @@ public class ServisPanel extends MyPanel {
     public ServisPanel() {
         super("Servis");
 
-        servisTable = (ServisTable)SpringUtil.getBean("servisTable");
+        servisTable = SpringUtil.getBean("servisTable", ServisTable.class);
         add(servisTable);
     }
 }

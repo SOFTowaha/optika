@@ -19,7 +19,7 @@ public class SpringUtil {
         return springUtil;
     }
 
-    public static Object getBean(String beanName){
-        return getSpringUtil().applicationContext.getBean(beanName);
+    public static <T extends Object> T getBean(String beanName, Class<T> type){
+        return type.cast(getSpringUtil().applicationContext.getBean(beanName));
     }
 }
