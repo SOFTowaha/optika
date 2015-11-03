@@ -1,6 +1,6 @@
 package co.rs.optika.gui.table.servis;
 
-import co.rs.optika.database.dao.TestBeanDao;
+import co.rs.optika.repository.dao.TestBeanDao;
 import co.rs.optika.gui.table.MyTable;
 import co.rs.optika.model.TestBean;
 

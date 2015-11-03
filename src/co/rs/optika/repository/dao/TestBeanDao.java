@@ -1,4 +1,4 @@
-package co.rs.optika.database.dao;
+package co.rs.optika.repository.dao;
 
 import co.rs.optika.model.TestBean;
 

@@ -4,6 +4,7 @@ import co.rs.optika.gui.frame.FullScreenFrame;
 import co.rs.optika.gui.menu.MenuBar;
 import co.rs.optika.gui.panel.LayeredPane;
 import co.rs.optika.gui.util.GUIUtil;
+import org.springframework.beans.BeanInfoFactory;
 
 import javax.swing.*;
 
@@ -24,9 +25,11 @@ public class OptikaApp {
             frame.setJMenuBar(menu);
             frame.setContentPane(content);
             frame.setVisible(true);
+            BeanInfoFactory bi;
         } catch (Exception ex) {
             System.out.println(ex);
         }
+
     }
 
     public static void main(String[] args) {

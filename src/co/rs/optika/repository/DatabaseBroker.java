@@ -1,4 +1,4 @@
-package co.rs.optika.database;
+package co.rs.optika.repository;
 
 public class DatabaseBroker {
 }
