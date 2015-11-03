@@ -18,6 +18,7 @@ public class MenuItemPanelAction extends AbstractAction {
     }
 
     public void actionPerformed(ActionEvent e) {
+
         layeredPane.moveToFront(panelName);
     }
 }

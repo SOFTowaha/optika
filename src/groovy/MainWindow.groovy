@@ -10,32 +10,34 @@ SwingBuilder swingBuilder = new SwingBuilder()
 swingBuilder.edt {
     lookAndFeel 'nimbus'
 
-    JLayeredPane layeredPane
+    def mainPanel = swingBuilder.panel(bounds: [1,1,100,100]){
+        label(text: 'Main panel')
+    }
+
+    def tablePanel = swingBuilder.panel(bounds: [1,1,100,100]){
+        label(text: 'Table panel')
+    }
+
+    def content = swingBuilder.layeredPane(){
+        widget(mainPanel,constraints:0)
+        widget(tablePanel,constraints:1)
+    }
+
+    def menu = swingBuilder.menuBar {
+        menuItem(text: "Main", mnemonic: 'M', actionPerformed: { content.moveToFront(mainPanel)})
+        menuItem(text: "Table", mnemonic: 'T', actionPerformed: { content.moveToFront(tablePanel)})
+        menuItem(text: "Exit", mnemonic: 'X', actionPerformed: { dispose() })
+    }
 
     Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
     swingBuilder.frame(title: 'Optika',
             size: [(int) screenSize.getWidth(), (int) screenSize.getHeight()],
-            pack: true,
+            JMenuBar: menu,
+            contentPane: content,
             extendedState: JFrame.MAXIMIZED_BOTH,
             defaultCloseOperation: WC.EXIT_ON_CLOSE,
-            show: true) {
-
-        menuBar {
-            menuItem(text: "Main", mnemonic: 'M', actionPerformed: { println 'Main' })
-            menuItem(text: "Table", mnemonic: 'T', actionPerformed: { println 'Table'})
-            menuItem(text: "Exit", mnemonic: 'X', actionPerformed: { dispose() })
-        }
-
-        /*
-        panel(constraints: BorderLayout.CENTER, border: compoundBorder([emptyBorder(10), titledBorder('Panel 1')])){
-            label(text:'Test1')
-        }
-        */
-        layeredPane = swingBuilder.layeredPane(constraints: border) {
-            widget(label(text: 'Main panel', constraints:0))
-            widget(label(text: 'Table panel', verticalAlignment: JLabel.TOP, horizontalAlignment: JLabel.CENTER, bounds: new Rectangle(20, 20, 140i, 140i), constraints: 1))
-        }
-    }
+            show: true
+    ) {}
 }
 
 
