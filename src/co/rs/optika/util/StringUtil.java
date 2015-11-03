@@ -1,6 +1,6 @@
 package co.rs.optika.util;
 
-public class Util {
+public class StringUtil {
     public static String noSpaceLowercase(String value) {
         return value.replaceAll(" ", "").toLowerCase();
     }
