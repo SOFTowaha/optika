@@ -1,8 +1,8 @@
 package co.rs.optika.gui.table.servis;
 
-import co.rs.optika.repository.dao.TestBeanDao;
 import co.rs.optika.gui.table.MyTable;
 import co.rs.optika.model.TestBean;
+import co.rs.optika.services.TestBeanService;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -17,6 +17,7 @@ public class ServisTable extends JPanel{
     private JScrollPane jScrollPane;
     private JButton removeAll;
     private JButton selectAll;
+    private TestBeanService testBeanService;
 
     public ServisTable(){
         setSize(300, 300);
@@ -47,8 +48,12 @@ public class ServisTable extends JPanel{
         add(removeAll);
     }
 
+    public void setTestBeanService(TestBeanService testBeanService) {
+        this.testBeanService = testBeanService;
+    }
+
     public void select(){
-        for(TestBean tb:new TestBeanDao().selectAll()){
+        for(TestBean tb:testBeanService.findAll()){
             tableModel.addRow(tb.getRowData());
         }
     }

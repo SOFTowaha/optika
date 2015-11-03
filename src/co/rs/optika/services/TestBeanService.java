@@ -1,7 +1,11 @@
 package co.rs.optika.services;
 
-/**
- * Created by dejan.tadic on 11/3/2015.
- */
-public class TestBeanService {
+import co.rs.optika.model.TestBean;
+
+import java.util.List;
+
+public interface  TestBeanService {
+
+    public List<TestBean> findAll();
+
 }

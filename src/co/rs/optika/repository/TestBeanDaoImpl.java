@@ -1,7 +1,13 @@
 package co.rs.optika.repository;
 
-/**
- * Created by dejan.tadic on 11/3/2015.
- */
-public class TestBeanDaoImpl {
+import co.rs.optika.model.TestBean;
+
+import java.util.List;
+
+public class TestBeanDaoImpl implements TestBeanDao {
+
+    @Override
+    public List<TestBean> findAll() {
+        return null;
+    }
 }

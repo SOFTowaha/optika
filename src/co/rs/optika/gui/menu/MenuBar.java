@@ -1,7 +1,7 @@
 package co.rs.optika.gui.menu;
 
 import co.rs.optika.gui.panel.LayeredPane;
-import co.rs.optika.util.Util;
+import co.rs.optika.util.StringUtil;
 
 import javax.swing.*;
 import java.util.LinkedHashMap;
@@ -55,7 +55,7 @@ public class MenuBar extends JMenuBar {
     private void addMenuItem(String menuName, String menuItemName) throws Exception {
         if (menuMap.containsKey(menuName)) {
             JMenuItem menuItem = new JMenuItem(menuItemName);
-            menuItem.addActionListener(new MenuItemPanelAction(layeredPane, Util.noSpaceLowercase(menuItemName)));
+            menuItem.addActionListener(new MenuItemPanelAction(layeredPane, StringUtil.noSpaceLowercase(menuItemName)));
             menuMap.get(menuName).add(menuItem);
         } else {
             throw new Exception("MenuBar.addMenuItem(String menuName, String menuItemName): Menu with name " + menuName + " does not exists.");

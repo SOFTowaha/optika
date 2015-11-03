@@ -2,6 +2,7 @@ package co.rs.optika.gui.panel.servis;
 
 import co.rs.optika.gui.panel.MyPanel;
 import co.rs.optika.gui.table.servis.ServisTable;
+import co.rs.optika.util.SpringUtil;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -14,7 +15,7 @@ public class ServisPanel extends MyPanel {
     public ServisPanel() {
         super("Servis");
 
-        servisTable = new ServisTable();
+        servisTable = (ServisTable)SpringUtil.getBean("servisTable");
         add(servisTable);
     }
 }
