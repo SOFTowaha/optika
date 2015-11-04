@@ -1,4 +1,4 @@
-package co.rs.optika.gui.table.servis;
+package co.rs.optika.gui.table.testBean;
 
 import co.rs.optika.gui.table.MyTable;
 import co.rs.optika.model.TestBean;
@@ -9,7 +9,7 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ServisTable extends JPanel{
+public class TestBeanTable extends JPanel{
 
     private String[] columnNames;
     private MyTable myTable;
@@ -19,7 +19,7 @@ public class ServisTable extends JPanel{
     private JButton selectAll;
     private TestBeanService testBeanService;
 
-    public ServisTable(){
+    public TestBeanTable(){
         setSize(300, 300);
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 

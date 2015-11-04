@@ -4,6 +4,7 @@ import co.rs.optika.gui.frame.FullScreenFrame;
 import co.rs.optika.gui.menu.MenuBar;
 import co.rs.optika.gui.panel.LayeredPane;
 import co.rs.optika.gui.util.GUIUtil;
+import co.rs.optika.util.SpringUtil;
 import org.springframework.beans.BeanInfoFactory;
 
 import javax.swing.*;
@@ -19,7 +20,7 @@ public class OptikaApp {
             GUIUtil.setNimbusLookAndFeel();
 
             frame = new FullScreenFrame("Optika");
-            content = new LayeredPane(true);
+            content = SpringUtil.getBean("layeredPane", LayeredPane.class);
             menu = new MenuBar(content);
 
             frame.setJMenuBar(menu);

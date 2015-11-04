@@ -1,43 +1,18 @@
 package co.rs.optika.gui.panel;
 
-import co.rs.optika.gui.panel.sifarnik.*;
-import co.rs.optika.gui.panel.ulazIzlaz.*;
-import co.rs.optika.gui.panel.izvestaji.*;
-import co.rs.optika.gui.panel.servis.*;
-
 import javax.swing.*;
 import java.util.HashMap;
+import java.util.List;
 
 public class LayeredPane extends JLayeredPane{
 
     private HashMap<String,JPanel> panelMap;
 
-    public LayeredPane(boolean initialize) {
+    public LayeredPane(List<JPanel> list) {
         panelMap = new HashMap<>();
 
-        if(initialize) {
-            //SIFARNIK
-            addPanel(new DobavljaciPanel());
-            addPanel(new ProdavnicePanel());
-            addPanel(new StopePorezaPanel());
-            addPanel(new NomenklaturaZavodaPanel());
-            addPanel(new FamilijeProizvodaPanel());
-            addPanel(new ProizvodiIRobaPanel());
-            addPanel(new CenovnikPanel());
-
-            //ULAZ / IZLAZ
-            addPanel(new PocetnoStanjeProdavnicePanel());
-            addPanel(new MaloprodajnaKalkulacijaPanel());
-            addPanel(new NivelacijaPanel());
-            addPanel(new RazduzenjeProdavnicePanel());
-
-            //IZVESTAJI
-            addPanel(new StanjeRobeUProdavniciPanel());
-            addPanel(new KarticeRobeUProdavniciPanel());
-            addPanel(new TrgovackaKnjigaPanel());
-
-            //SERVIS
-            addPanel(new ServisPanel());
+        for(JPanel panel:list) {
+            addPanel(panel);
         }
     }
 

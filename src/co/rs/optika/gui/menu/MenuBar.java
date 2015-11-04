@@ -40,6 +40,9 @@ public class MenuBar extends JMenuBar {
         addMenu("SERVIS");
         addMenuItem("SERVIS", "Servis");
 
+        addMenu("TEST");
+        addMenuItem("TEST", "TestBean");
+
         addMenus();
     }
 

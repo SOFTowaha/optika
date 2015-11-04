@@ -1,18 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-       <bean name="testBeanDaoImpl" class="co.rs.optika.repository.TestBeanDaoImpl"/>
-       <bean name="testBeanDaoStud" class="co.rs.optika.repository.TestBeanDaoStud"/>
+    <bean name="testBeanDaoImpl" class="co.rs.optika.repository.TestBeanDaoImpl"/>
+    <bean name="testBeanDaoStud" class="co.rs.optika.repository.TestBeanDaoStud"/>
 
-       <bean name="testBeanService" class="co.rs.optika.services.TestBeanServiceImpl">
-         <property name="testBeanDao" ref="testBeanDaoStud"/>
-       </bean>
+    <bean name="testBeanService" class="co.rs.optika.services.TestBeanServiceImpl">
+        <property name="testBeanDao" ref="testBeanDaoStud"/>
+    </bean>
 
-       <bean name="servisTable" class="co.rs.optika.gui.table.servis.ServisTable">
-         <property name="testBeanService" ref="testBeanService"/>
-       </bean>
+    <bean name="testBeanTable" class="co.rs.optika.gui.table.testBean.TestBeanTable">
+        <property name="testBeanService" ref="testBeanService"/>
+    </bean>
+
+
+    <bean name="cenovnikPanel" class="co.rs.optika.gui.panel.sifarnik.CenovnikPanel"/>
+    <bean name="dobavljaciPanel" class="co.rs.optika.gui.panel.sifarnik.DobavljaciPanel"/>
+    <bean name="familijeProizvodaPanel" class="co.rs.optika.gui.panel.sifarnik.FamilijeProizvodaPanel"/>
+    <bean name="nomenklaturaZavodaPanel" class="co.rs.optika.gui.panel.sifarnik.NomenklaturaZavodaPanel"/>
+    <bean name="prodavnicePanel" class="co.rs.optika.gui.panel.sifarnik.ProdavnicePanel"/>
+    <bean name="proizvodiIRobaPanel" class="co.rs.optika.gui.panel.sifarnik.ProizvodiIRobaPanel"/>
+    <bean name="stopePorezaPanel" class="co.rs.optika.gui.panel.sifarnik.StopePorezaPanel"/>
+
+    <bean name="maloprodajnaKalkulacijaPanel" class="co.rs.optika.gui.panel.ulazIzlaz.MaloprodajnaKalkulacijaPanel"/>
+    <bean name="nivelacijaPanel" class="co.rs.optika.gui.panel.ulazIzlaz.NivelacijaPanel"/>
+    <bean name="pocetnoStanjeProdavnicePanel" class="co.rs.optika.gui.panel.ulazIzlaz.PocetnoStanjeProdavnicePanel"/>
+    <bean name="razduzenjeProdavnicePanel" class="co.rs.optika.gui.panel.ulazIzlaz.RazduzenjeProdavnicePanel"/>
+
+    <bean name="karticeRobeUProdavniciPanel" class="co.rs.optika.gui.panel.izvestaji.KarticeRobeUProdavniciPanel"/>
+    <bean name="stanjeRobeUProdavniciPanel" class="co.rs.optika.gui.panel.izvestaji.StanjeRobeUProdavniciPanel"/>
+    <bean name="trgovackaKnjigaPanel" class="co.rs.optika.gui.panel.izvestaji.TrgovackaKnjigaPanel"/>
+
+    <bean name="servisPanel" class="co.rs.optika.gui.panel.servis.ServisPanel"/>
+
+    <bean name="testBeanPanel" class="co.rs.optika.gui.panel.testBean.TestBeanPanel">
+        <property name="testBeanTable" ref="testBeanTable"/>
+    </bean>
+
+    <bean name="layeredPane" class="co.rs.optika.gui.panel.LayeredPane">
+        <constructor-arg>
+            <list>
+                <ref bean="cenovnikPanel"/>
+                <ref bean="dobavljaciPanel"/>
+                <ref bean="familijeProizvodaPanel"/>
+                <ref bean="nomenklaturaZavodaPanel"/>
+                <ref bean="prodavnicePanel"/>
+                <ref bean="proizvodiIRobaPanel"/>
+                <ref bean="stopePorezaPanel"/>
+
+                <ref bean="maloprodajnaKalkulacijaPanel"/>
+                <ref bean="nivelacijaPanel"/>
+                <ref bean="pocetnoStanjeProdavnicePanel"/>
+                <ref bean="razduzenjeProdavnicePanel"/>
+
+                <ref bean="karticeRobeUProdavniciPanel"/>
+                <ref bean="stanjeRobeUProdavniciPanel"/>
+                <ref bean="trgovackaKnjigaPanel"/>
+
+                <ref bean="servisPanel"/>
+
+                <ref bean="testBeanPanel"/>
+            </list>
+        </constructor-arg>
+    </bean>
 
 </beans>
