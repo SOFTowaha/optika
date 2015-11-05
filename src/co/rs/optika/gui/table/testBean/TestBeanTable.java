@@ -2,7 +2,7 @@ package co.rs.optika.gui.table.testBean;
 
 import co.rs.optika.gui.table.MyTable;
 import co.rs.optika.model.TestBean;
-import co.rs.optika.services.TestBeanService;
+import co.rs.optika.services.testBean.TestBeanService;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;

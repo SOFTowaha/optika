@@ -1,4 +1,4 @@
-package co.rs.optika.repository;
+package co.rs.optika.repository.testBean;
 
 import co.rs.optika.model.TestBean;
 

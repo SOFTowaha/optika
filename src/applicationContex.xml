@@ -4,10 +4,10 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean name="testBeanDaoImpl" class="co.rs.optika.repository.TestBeanDaoImpl"/>
-    <bean name="testBeanDaoStud" class="co.rs.optika.repository.TestBeanDaoStud"/>
+    <bean name="testBeanDaoImpl" class="co.rs.optika.repository.testBean.TestBeanDaoImpl"/>
+    <bean name="testBeanDaoStud" class="co.rs.optika.repository.testBean.TestBeanDaoStud"/>
 
-    <bean name="testBeanService" class="co.rs.optika.services.TestBeanServiceImpl">
+    <bean name="testBeanService" class="co.rs.optika.services.testBean.TestBeanServiceImpl">
         <property name="testBeanDao" ref="testBeanDaoStud"/>
     </bean>
 
